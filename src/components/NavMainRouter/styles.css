@@ -1,0 +1,18 @@
+ul.NavMainRouter li button {
+  background: none;
+  border: none;
+  padding-top: 5px;
+}
+
+ul.NavMainRouter li {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+ul.NavMainRouter li a{
+  color: #737689;
+  justify-content: center;
+  display: contents;
+}

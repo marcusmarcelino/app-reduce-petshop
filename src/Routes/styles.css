@@ -1,0 +1,12 @@
+/*div.Routes div.main-router {
+  display: grid;
+  grid-template-columns: 150px auto;
+}*/
+
+div.Routes div.main-router ul li,
+div.Routes div.main-router ul li a{
+  text-align: left;
+  text-decoration: none;
+  list-style: none;
+  text-transform: uppercase;
+}

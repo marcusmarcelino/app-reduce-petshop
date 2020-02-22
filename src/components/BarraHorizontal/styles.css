@@ -1,0 +1,23 @@
+.BarraHorizontal {
+  border-bottom: 1px solid #7376892c;
+  /*font-family: Avenir Heavy;*/
+  color: #737689;
+  font-size: 13px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.BarraHorizontal ul {
+  display: flex;
+}
+
+.BarraHorizontal ul li {
+  margin: 0 1rem;
+  text-decoration: none;
+  list-style: none;
+}
+
+.BarraHorizontal ul li:nth-child(1){
+  padding-right: 2rem;
+  border-right: 2px solid #b8b8b877;
+}

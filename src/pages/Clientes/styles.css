@@ -1,0 +1,19 @@
+div.client-list {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 150px auto;
+}
+
+.table-client {
+  width: 100%;
+  text-align: left;
+}
+
+.row{
+  margin: 10px;
+}
+
+div.result-grid-right table{
+  margin: 16px 0;
+  text-align: left;
+}

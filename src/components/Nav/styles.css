@@ -1,0 +1,38 @@
+nav.nav-lateral {
+  height: 100vh;
+  background-color: #09CFA3;
+}
+
+nav.nav-lateral ul.nav{
+  padding: 3rem 0 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav.nav-lateral ul.nav li {
+  margin-bottom: 1rem;
+}
+
+nav.nav-lateral ul.nav li.logo svg{
+  font-size: 5rem!important;
+}
+
+nav.nav-lateral ul.nav li,
+nav.nav-lateral ul.nav li a {
+  color: #FFF;
+}
+
+nav.nav-lateral ul.nav li a {
+  text-decoration: none;
+  transition: all 300ms;
+  font-family: "Avenir Medium";
+  font-size: 12px;
+}
+
+nav.nav-lateral ul.nav li a:hover {
+  color: rgb(14, 0, 216);
+}
+
+nav.nav-lateral ul.nav li:nth-child(3) a{
+  color: #049C7A;
+}
