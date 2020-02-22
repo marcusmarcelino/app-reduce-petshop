@@ -1,8 +1,27 @@
 import React, { Component } from "react";
 import "./styles.css";
+import { connect } from 'react-redux';
+import * as actions from '../../actions/index';
+
+const Cliente = ({cliente}) => (
+  <tr>
+    <td>{cliente.id}</td>
+    <td>{cliente.name}</td>
+    <td>{cliente.document}</td>
+    <td>{cliente.birthdate}</td>
+    <td>{cliente.customer_since}</td>
+    <td>{cliente.last_purchase}</td>
+  </tr>
+);
 
 class ClientTable extends Component {
+
+  componentDidMount(){
+    this.props.getClientes();
+  }
+
   render() {
+    const {clientes: data} = this.props;
     return (
       <table className="ClientTable">
         <thead>
@@ -16,26 +35,19 @@ class ClientTable extends Component {
           </tr>
         </thead>
         <tbody>
-          <tr className="row">
-            <td>1</td>
-            <td>Marcus</td>
-            <td>059.675.71-40</td>
-            <td>11/07/1997</td>
-            <td>21/02/2020</td>
-            <td>21/02/2020</td>
-          </tr>
-          <tr className="row">
-            <td>1</td>
-            <td>Marcus</td>
-            <td>059.675.71-40</td>
-            <td>11/07/1997</td>
-            <td>21/02/2020</td>
-            <td>21/02/2020</td>
-          </tr>
+        {
+          (data || []).map((cliente, index) => (
+            <Cliente cliente={cliente} key={index} />
+          ))
+        }
         </tbody>
       </table> 
     )
   }
-} 
+}
 
-export default ClientTable;
+const mapStateToProps = state => ({
+  clientes: state.clientes.clientes
+});
+
+export default connect(mapStateToProps, actions)(ClientTable);
