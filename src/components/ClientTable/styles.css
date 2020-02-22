@@ -1,0 +1,13 @@
+.ClientTable {
+  width: 100%;
+  text-align: left;
+}
+
+.row{
+  margin: 10px;
+}
+
+table{
+  margin: 16px 0;
+  text-align: left;
+}

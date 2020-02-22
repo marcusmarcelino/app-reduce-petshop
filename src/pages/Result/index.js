@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './styles.css';
 import NavMainRouter from '../../components/NavMainRouter';
+import FilterNav from '../../components/FilterNav';
+import ContentValueTotal from '../../components/ContentValueTotal';
+import GraphicCircle from '../../components/GraphicCircle';
+import GraphicBar from '../../components/GraphicBar';
 
 class Result extends Component {
   render() {
@@ -10,41 +14,12 @@ class Result extends Component {
           <NavMainRouter />
         </div>
         <div className="result-grid-right">
-          <ul className="nav">
-            <li className="nav-item">
-              <button>Hoje</button>
-            </li>
-            <li className="nav-item">
-              <button>Última Semana</button>
-            </li>
-            <li className="nav-item">
-              <button>Último Mês</button>
-            </li>
-            <li className="nav-item">
-              <button>Outro Período</button>
-            </li>
-          </ul>
+          <FilterNav />
           <div className="result-content">
-            <header className="content-value-total">
-              <h4 className="result-content-title">
-                Valor Total
-              </h4>
-              <ul>
-                <li className="label-money">
-                  R$
-                </li>
-                <li className="content-money">
-                  10.178,60
-                </li>
-              </ul>
-            </header>
+            <ContentValueTotal />
             <div className="content-graphics">
-              <div className="graphic-circle">
-                <h4 className="result-content-title">Serviços</h4>
-              </div>
-              <div className="graphic-bar">
-                <h4 className="result-content-title">Despesas X Receitas</h4>
-              </div>
+              <GraphicCircle />
+              <GraphicBar />
             </div>
           </div>
         </div>

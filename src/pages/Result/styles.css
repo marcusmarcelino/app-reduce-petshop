@@ -14,44 +14,6 @@ div.Result div.result-grid-right div.result-content .result-content-title{
   color:  #737689;
 }
 
-div.Result div.result-grid-right div.result-content header.content-value-total {
-  border-bottom: 1px solid #7376892c;
-}
-
-div.Result div.result-grid-right div.result-content header.content-value-total ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-div.Result div.result-grid-right div.result-content header.content-value-total ul li.label-mone{
-  font-size: 25px;
-  color: #09D0A3;
-}
-
-div.Result div.result-grid-right div.result-content header.content-value-total ul li.content-money{
-  font-size: 70px;
-  color: #09D0A3;
-}
-
-div.Result div.result-grid-right ul.nav {
-  display: flex;
-}
-
-div.Result div.result-grid-right ul.nav li{
-  margin: 0 10px;
-}
-
-div.Result div.result-grid-right ul.nav li button {
-  border-radius: 10px;
-  background-color: #09D0A3;
-  color: #fff;
-  border: none;
-  border-style: none;
-  font-size: 16px;
-  padding: 5px 10px;
-}
-
 div.Result div.result-grid-right div.result-content div.content-graphics{
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -1,0 +1,19 @@
+header.ContentValueTotal {
+  border-bottom: 1px solid #7376892c;
+}
+
+header.ContentValueTotal ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header.ContentValueTotal ul li.label-mone{
+  font-size: 25px;
+  color: #09D0A3;
+}
+
+header.ContentValueTotal ul li.content-money{
+  font-size: 70px;
+  color: #09D0A3;
+}

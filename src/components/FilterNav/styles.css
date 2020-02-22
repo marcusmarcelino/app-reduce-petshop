@@ -1,0 +1,17 @@
+ul.FilterNav {
+  display: flex;
+}
+
+ul.FilterNav li{
+  margin: 0 10px;
+}
+
+ul.FilterNav li button {
+  border-radius: 10px;
+  background-color: #09D0A3;
+  color: #fff;
+  border: none;
+  border-style: none;
+  font-size: 16px;
+  padding: 5px 10px;
+}
