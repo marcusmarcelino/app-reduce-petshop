@@ -2,12 +2,18 @@ import React, {Component} from 'react';
 import './styles.css';
 import PetsIcon from '@material-ui/icons/Pets';
 import WidgetsIcon from '@material-ui/icons/Widgets';
-import FolderOpenIcon from '@material-ui/icons/FolderOpen'
+import FolderOpenIcon from '@material-ui/icons/FolderOpen';
+
+const open = () => {
+  /*const el = document.querySelector("#nav-lateral");
+  console.log(el);
+  el.addClass("is-open");*/
+}
 
 class Nav extends Component{
   render() {
     return (
-      <nav className="nav-lateral">
+      <nav id="nav-lateral" className="nav-lateral">
         <ul className="nav">
           <li className="logo">
             <PetsIcon/>

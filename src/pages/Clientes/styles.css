@@ -3,3 +3,33 @@ div.client-list {
   display: grid;
   grid-template-columns: 150px auto;
 }
+
+.Opcoes {
+  display: flex;
+  align-items: center;
+}
+
+.Opcoes div.Pesquisa,
+.Opcoes div.Ordenacao{
+  margin: 0 2rem;
+}
+
+.Opcoes div.Ordenacao select{
+  padding: 6px;
+  border-radius: 30px;
+  background-color: #fff;
+  border: 1px solid #dddcdc;
+  color: #7e7e7e;
+}
+
+@media only screen and (max-width: 900px) {
+  div.client-list {
+    display:block;
+    padding: 0;
+  }
+
+  .cliente-table {
+    overflow: auto;
+    min-width: 600px;
+  }
+}

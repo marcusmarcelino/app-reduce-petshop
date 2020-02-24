@@ -1,3 +1,7 @@
+ul.NavMainRouter {
+  margin-top: 0;
+}
+
 ul.NavMainRouter li button {
   background: none;
   border: none;
@@ -5,7 +9,7 @@ ul.NavMainRouter li button {
 }
 
 ul.NavMainRouter li {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   font-size: 13px;
@@ -15,4 +19,20 @@ ul.NavMainRouter li a{
   color: #737689;
   justify-content: center;
   display: contents;
+}
+
+@media only screen and (max-width: 900px) {
+  ul.NavMainRouter {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.NavMainRouter li{
+    margin: 1rem 1.5rem;
+  }
+
+  ul.NavMainRouter {
+    display:flex;
+    justify-items: center;
+  }
 }

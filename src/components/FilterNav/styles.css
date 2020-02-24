@@ -1,5 +1,6 @@
 ul.FilterNav {
   display: flex;
+  margin-top: 0;
 }
 
 ul.FilterNav li{

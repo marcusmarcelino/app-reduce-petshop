@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions/index';
 
 const Cliente = ({cliente}) => (
-  <tr>
+  <tr className="row">
     <td>{cliente.id}</td>
     <td>{cliente.name}</td>
     <td>{cliente.document}</td>
@@ -20,12 +20,26 @@ class ClientTable extends Component {
     this.props.getClientes();
   }
 
+  ordenacao = (a, b) => {
+    const { ordenacao } = this.props;
+    if( ordenacao === 'a-z') return a.name.localeCompare(b.nome)
+    else if( ordenacao === 'z-a') return -1 * a.name.localeCompare(b.nome)
+    else if( ordenacao === 'criacao') return new Date(a.criadoEm) - new Date(b.criadoEm)
+  }
+
+  pesquisa = ({id, name, document, birthdate, customer_since, last_purchase}) => {
+    const { pesquisa } = this.props;
+    if (!pesquisa) return true;
+    const item = [id, name, document, birthdate, customer_since, last_purchase].join(';');
+    return item.includes(pesquisa);
+  }
+
   render() {
     const {clientes: data} = this.props;
     return (
       <table className="ClientTable">
         <thead>
-          <tr className="row">
+          <tr>
             <th>Id</th>
             <th>Nome</th>
             <th>Documento</th>
@@ -36,7 +50,10 @@ class ClientTable extends Component {
         </thead>
         <tbody>
         {
-          (data || []).map((cliente, index) => (
+          (data || [])
+          .filter(this.pesquisa)
+          .sort(this.ordenacao)
+          .map((cliente, index) => (
             <Cliente cliente={cliente} key={index} />
           ))
         }
@@ -47,7 +64,9 @@ class ClientTable extends Component {
 }
 
 const mapStateToProps = state => ({
-  clientes: state.clientes.clientes
+  clientes: state.clientes.clientes,
+  ordenacao:state.clientes.ordenacao,
+  pesquisa: state.clientes.pesquisa
 });
 
 export default connect(mapStateToProps, actions)(ClientTable);

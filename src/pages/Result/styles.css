@@ -18,3 +18,12 @@ div.Result div.result-grid-right div.result-content div.content-graphics{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+@media only screen and (max-width: 900px) {
+  div.Result div.result-grid-right div.result-content div.content-graphics,
+  div.Result {
+    display:block;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

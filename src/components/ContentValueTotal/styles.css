@@ -8,12 +8,11 @@ header.ContentValueTotal ul {
   justify-content: center;
 }
 
-header.ContentValueTotal ul li.label-mone{
+header.ContentValueTotal ul li{
   font-size: 25px;
   color: #09D0A3;
 }
 
 header.ContentValueTotal ul li.content-money{
   font-size: 70px;
-  color: #09D0A3;
 }

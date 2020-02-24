@@ -1,6 +1,12 @@
 nav.nav-lateral {
   height: 100vh;
   background-color: #09CFA3;
+  min-height: 100%;
+  transition: all 400ms;
+}
+
+nav.nav-lateral.is-open {
+  height: 100vh;
 }
 
 nav.nav-lateral ul.nav{
@@ -35,4 +41,12 @@ nav.nav-lateral ul.nav li a:hover {
 
 nav.nav-lateral ul.nav li:nth-child(3) a{
   color: #049C7A;
+}
+
+@media only screen and (max-width: 600px) {
+  nav.nav-lateral {
+    opacity: 0;
+    height: 0;
+    display: none;
+  }
 }
