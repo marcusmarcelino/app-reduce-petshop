@@ -1,21 +1,49 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Chart from "react-google-charts";
+import { connect } from 'react-redux';
+import * as actions from '../../actions/index';
 
-const data = [
-  ["Task", "Hours per Day"],
-  ["Banho & Tosa", 9],
-  ["Consultas", 2],
-  ["Medicamentos", 7] // CSS-style declaration
-];
-const options = {
-  pieHole: 0.8,
-  is3D: false,
-  legend: "none",
-  colors: ['#BE2FBC', '#6333B6','#4C7ABF']
-};
+
 class Graphic extends React.Component {
+
+  componentDidMount(){
+    this.props.getTransactions();
+  }
+  
+  totalPorTipo = (data,tipo) => {
+    let total=0;
+    for (var d in data) {
+      if(data[d].product_name === tipo){
+        total += data[d].amount;
+      }
+    }
+    return total;
+  }
+
   render() {
+    const transactions = this.props.transactions;
+    
+    const perBanTosa = this.totalPorTipo(transactions,"Banho & Tosa");
+    
+    const perCons = this.totalPorTipo(transactions,"Consultas");
+
+    const percMed = this.totalPorTipo(transactions,"Medicamentos");
+
+    const options = {
+      pieHole: 0.8,
+      is3D: false,
+      legend: "none",
+      colors: ['#BE2FBC', '#6333B6','#4C7ABF']
+    };
+
+    const data = [
+      ["Task", "Hours per Day"],
+      ["Banho & Tosa", perBanTosa],
+      ["Consultas", perCons],
+      ["Medicamentos", percMed] // CSS-style declaration
+    ];
+    
     return (
       <div className="Graphic">
         <Chart
@@ -34,4 +62,8 @@ class Graphic extends React.Component {
   }
 }
 
-export default Graphic;
+const mapStateToProps = state => ({
+  transactions: state.clientes.transactions,
+});
+
+export default connect(mapStateToProps, actions)(Graphic);

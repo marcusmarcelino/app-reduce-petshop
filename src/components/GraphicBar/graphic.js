@@ -1,25 +1,60 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Chart from "react-google-charts";
-
-const data = [
-  ["Task", "Valor Total"],
-  ["Receitas", 12],
-  ["Despesas", 2]
-];
-const options = {
-  pieHole: 0.8,
-  is3D: false,
-  legend: "none",
- 
-  height:300,
-  colors: ['#b0120a', '#666']
-};
-
-const rootProps={'data-testid': '3'}
+import { connect } from 'react-redux';
+import * as actions from '../../actions/index';
 
 class Graphic extends React.Component {
-  render() {
+
+  componentDidMount(){
+    this.props.getTransactions();
+  }
+
+  total = (transactions) => {
+    const total = (this.totalPorTipo(transactions,"Banho & Tosa")
+    +this.totalPorTipo(transactions,"Consultas")
+    +this.totalPorTipo(transactions,"Medicamentos"));
+    return total;
+  }
+
+  totalPorTipo = (data,tipo) => {
+    let total=0;
+    for (var d in data) {
+      if(data[d].product_name === tipo){
+        total += data[d].amount;
+      }
+    }
+    return total;
+  }
+
+  despesas = (data,tipo) => {
+    let total=0;
+    for (var d in data) {
+      if(data[d].type === tipo){
+        total += data[d].amount;
+      }
+    }
+    return total;
+  }
+
+  render() {    
+    const transactions = this.props.transactions;
+    const total=this.total(transactions);
+    const despesas = this.despesas(transactions,"Despesas");
+
+    const data = [
+      ["Task", "Valor Total",''],
+      ["Receitas", total,0],
+      ["Despesas", 0,despesas]
+    ];
+    const options = {
+      pieHole: 0.8,
+      is3D: false,
+      legend: { position: 'none' },
+      height:300,
+      colors: ['#22D7AD', 'rgb(254, 79, 100)']
+    };
+    const rootProps={'data-testid': '3'}
     return (
       <div className="Graphic">
         <Chart
@@ -36,4 +71,8 @@ class Graphic extends React.Component {
   }
 }
 
-export default Graphic;
+const mapStateToProps = state => ({
+  transactions: state.clientes.transactions,
+});
+
+export default connect(mapStateToProps, actions)(Graphic);
