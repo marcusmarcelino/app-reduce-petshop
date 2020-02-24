@@ -31,6 +31,7 @@ class Graphic extends React.Component {
     const percMed = this.totalPorTipo(transactions,"Medicamentos");
 
     const options = {
+      tooltip: { trigger: 'selection' },
       pieHole: 0.8,
       is3D: false,
       legend: "none",
@@ -38,15 +39,16 @@ class Graphic extends React.Component {
     };
 
     const data = [
-      ["Task", "Hours per Day"],
+      ["Task", ""],
       ["Banho & Tosa", perBanTosa],
       ["Consultas", perCons],
-      ["Medicamentos", percMed] // CSS-style declaration
+      ["Medicamentos", percMed]
     ];
     
     return (
       <div className="Graphic">
         <Chart
+          
           chartType="PieChart"
           legend="none"
           legendToggle="none"

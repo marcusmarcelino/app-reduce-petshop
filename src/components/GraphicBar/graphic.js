@@ -43,7 +43,7 @@ class Graphic extends React.Component {
     const despesas = this.despesas(transactions,"Despesas");
 
     const data = [
-      ["Task", "Valor Total",''],
+      ["Task", "Valor Total",'Valor Total'],
       ["Receitas", total,0],
       ["Despesas", 0,despesas]
     ];
