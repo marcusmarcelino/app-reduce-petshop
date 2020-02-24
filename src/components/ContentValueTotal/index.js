@@ -10,28 +10,6 @@ class ContentValueTotal extends Component{
   }
   
   totalLiquido = (data) => {
-    /**const { transactions } = this.props;
-    transactions.reduce((sum, data) => {
-      return sum + data.amount;
-    }, 0);
-    console.log(data)
-    for (var d in data) {
-      const amount = data[d].amount;
-      console.log(amount);
-    }
-    (data || []).map((data, index) => (
-      console.log("amount")
-    ))
-
-    console.log(receitas);
-    console.log(despesas);
-
-    return (data || []).reduce((sum, data) => {
-      return sum + data.amount;
-    }, 0);
-
-    toFixed(2)
-    */
     let receitas=0;
     let despesas=0;
     for (var d in data) {
@@ -43,20 +21,11 @@ class ContentValueTotal extends Component{
       }
     }
     return(receitas-despesas)
-  }
-
-  totalPorTipo = (data,tipo) => {
-    let total=0;
-    for (var d in data) {
-      if(data[d].type === tipo){
-        total += data[d].amount;
-      }
-    }
-    return total;
-  }
+  } 
 
   render() {
     const transactions = this.props.transactions;
+    const format = this.totalLiquido(transactions).toLocaleString('pt-BR', {minimumFractionDigits: 2, style: 'currency', currency: 'BRL' });
     return (
       <header className="ContentValueTotal">
         <h4 className="result-content-title">
@@ -67,7 +36,7 @@ class ContentValueTotal extends Component{
             R$
           </li>
           <li className="content-money">
-            {this.totalLiquido(transactions).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+            {format}
           </li>
         </ul>
       </header>

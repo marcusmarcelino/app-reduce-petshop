@@ -4,12 +4,6 @@ import PetsIcon from '@material-ui/icons/Pets';
 import WidgetsIcon from '@material-ui/icons/Widgets';
 import FolderOpenIcon from '@material-ui/icons/FolderOpen';
 
-const open = () => {
-  /*const el = document.querySelector("#nav-lateral");
-  console.log(el);
-  el.addClass("is-open");*/
-}
-
 class Nav extends Component{
   render() {
     return (
