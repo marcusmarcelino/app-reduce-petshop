@@ -33,4 +33,34 @@ div.content-graphics .GraphicBar {
     margin-top: 0;
     padding-top: 0;
   }
+
+  div.content-graphics .GraphicCircle{
+    margin-right: 0;
+  }
+  div.content-graphics .GraphicBar {
+    margin-left: 0;
+  }
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+}
+
+.legend-graphic {
+  font-family: "Avenir Roman";
+  color:#4A4A4A;
+  font-size: 10px;
+}
+
+.value-graphic{
+  font-family: "Avenir Black";
+  color: #4A4A4A;
+  font-size: 12
+}
+
+div.d-flex.value-graphic p {
+  margin-right: 10px;
 }

@@ -4,8 +4,11 @@ header.ContentValueTotal {
 
 header.ContentValueTotal ul {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: center;
+}
+header.ContentValueTotal ul li:first-child{
+  margin-top: 20px;
 }
 
 header.ContentValueTotal ul li{
@@ -15,4 +18,10 @@ header.ContentValueTotal ul li{
 
 header.ContentValueTotal ul li.content-money{
   font-size: 70px;
+}
+header.ContentValueTotal ul{
+  margin-top: 0;
+}
+header.ContentValueTotal h4{
+  margin-bottom: -15px;
 }

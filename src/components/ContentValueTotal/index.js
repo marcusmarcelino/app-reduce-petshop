@@ -25,7 +25,7 @@ class ContentValueTotal extends Component{
 
   render() {
     const transactions = this.props.transactions;
-    const format = this.totalLiquido(transactions).toLocaleString('pt-BR', {minimumFractionDigits: 2, style: 'currency', currency: 'BRL' });
+    const format = this.totalLiquido(transactions).toLocaleString('pt-BR', {minimumFractionDigits: 2, currency: 'BRL' });
     return (
       <header className="ContentValueTotal">
         <h4 className="result-content-title">
