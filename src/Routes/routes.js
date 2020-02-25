@@ -4,18 +4,31 @@ import './styles.css';
 import Result from '../pages/Result/index';
 import Clientes from '../pages/Clientes/index';
 import BarraHorizontal from '../components/BarraHorizontal/index';
+import Nav from '../components/Nav/index';
+
+import NavMainRouterFaturamento from '../components/NavMainRouter';
 
 const Routes = () => (
   <div className="Routes">
-    <BarraHorizontal />
-    <div className="main-router">
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Result} />
-          <Route path="/clientes" component={Clientes} />
-        </Switch>
+        <div className="main-router">
+          <Nav />
+          <div className="main">
+            <BarraHorizontal />
+            <div className="main-router-grid">
+              <div className="main-router-grid-left">
+                <NavMainRouterFaturamento />
+              </div>
+              <div className="main-router-grid-right">
+                <Switch>
+                  <Route exact path="/" component={Result} />
+                  <Route path="/clientes" component={Clientes} />
+                </Switch>
+              </div>
+            </div>
+          </div>
+        </div>
       </BrowserRouter>
-    </div>
   </div>
 );
 

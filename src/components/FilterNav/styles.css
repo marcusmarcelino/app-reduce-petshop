@@ -17,3 +17,9 @@ ul.FilterNav li button {
   font-size: 16px;
   padding: 5px 10px;
 }
+
+@media only screen and (max-width: 900px) {
+  ul.FilterNav li button{
+    font-size: 12px;
+  }
+}

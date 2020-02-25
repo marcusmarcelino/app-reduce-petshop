@@ -17,6 +17,7 @@ nav.nav-lateral ul.nav{
 
 nav.nav-lateral ul.nav li {
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 nav.nav-lateral ul.nav li.logo svg{

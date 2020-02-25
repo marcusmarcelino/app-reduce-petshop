@@ -1,7 +1,7 @@
 div.client-list {
   padding-top: 20px;
-  display: grid;
-  grid-template-columns: 150px auto;
+  /*display: grid;
+  grid-template-columns: 150px auto;*/
 }
 
 .Opcoes {
@@ -28,8 +28,12 @@ div.client-list {
     padding: 0;
   }
 
-  .cliente-table {
+  .Opcoes {
+    padding-left: 1rem;
+  }
+
+  /*.cliente-table {
     overflow: auto;
     min-width: 600px;
-  }
+  }*/
 }

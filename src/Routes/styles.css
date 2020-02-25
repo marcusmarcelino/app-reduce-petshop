@@ -1,11 +1,15 @@
-/*div.Routes div.main-router {
+div.main-router{
   display: grid;
   grid-template-columns: 150px auto;
-}*/
+}
+
+div.main-router-grid{
+  display: grid;
+  grid-template-columns: 130px auto;
+}
 
 div.Routes div.main-router ul li,
 div.Routes div.main-router ul li a{
-  text-align: left;
   text-decoration: none;
   list-style: none;
   text-transform: uppercase;
@@ -13,4 +17,14 @@ div.Routes div.main-router ul li a{
 
 p, h1,h2,h3,h4{
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 900px) {
+  div.main-router,
+  div.main-router-grid {
+    display:block;
+    margin-top: 0;
+    padding-top: 0;
+    width: 100vw;
+  }
 }

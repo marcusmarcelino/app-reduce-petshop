@@ -1,7 +1,3 @@
-ul.NavMainRouter {
-  margin-top: 0;
-}
-
 ul.NavMainRouter li button {
   background: none;
   border: none;
@@ -28,7 +24,7 @@ ul.NavMainRouter li a{
   }
 
   ul.NavMainRouter li{
-    margin: 1rem 1.5rem;
+    margin: 1rem 1.5rem 1rem .5rem;
   }
 
   ul.NavMainRouter {

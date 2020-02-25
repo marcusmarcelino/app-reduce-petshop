@@ -25,3 +25,9 @@ header.ContentValueTotal ul{
 header.ContentValueTotal h4{
   margin-bottom: -15px;
 }
+
+@media only screen and (max-width: 900px) {
+  header.ContentValueTotal ul{
+    padding: 0;
+  }
+}

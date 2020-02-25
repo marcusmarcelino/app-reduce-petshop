@@ -1,20 +1,20 @@
 div.Result {
   padding-top: 20px;
-  display: grid;
-  grid-template-columns: 150px auto;
+  /*display: grid;
+  grid-template-columns: 150px auto;*/
 }
 
-div.Result div.result-grid-right div.result-content {
+div.result-content {
   max-width: 700px;
   margin: 0 auto;
 }
 
-div.Result div.result-grid-right div.result-content .result-content-title{
+.result-content-title{
   font-size: 14px;
   color:  #737689;
 }
 
-div.Result div.result-grid-right div.result-content div.content-graphics{
+div.content-graphics{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -27,11 +27,17 @@ div.content-graphics .GraphicBar {
 }
 
 @media only screen and (max-width: 900px) {
-  div.Result div.result-grid-right div.result-content div.content-graphics,
+
   div.Result {
+    padding-top: 0;
+  }
+
+  div.content-graphics {
     display:block;
     margin-top: 0;
     padding-top: 0;
+    align-items: center;
+    text-align: center;
   }
 
   div.content-graphics .GraphicCircle{

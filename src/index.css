@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-div.App {
+/*div.App {
   display: grid;
   grid-template-columns: 150px auto;
 }
@@ -21,4 +21,4 @@ div.App {
   div.App {
     display:block;
   }
-}
+}*/
