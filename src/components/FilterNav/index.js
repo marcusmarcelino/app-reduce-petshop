@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
+import { Button, ButtonToolbar } from 'react-bootstrap';
+
 
 class FilterNav extends Component {
 
@@ -11,23 +13,17 @@ class FilterNav extends Component {
   sayHello() {
     alert('Hello!');;
   }
-
+  //<Button >Warning</Button>//variant="warning"
   render() {
     return (
-      <ul className="FilterNav">
-        <li className="nav-item">
-          <button onClick={this.sayHello}>Hoje</button>
-        </li>
-        <li className="nav-item">
-          <button>Última Semana</button>
-        </li>
-        <li className="nav-item">
-          <button>Último Mês</button>
-        </li>
-        <li className="nav-item">
-          <button>Outro Período</button>
-        </li>
-      </ul>
+      <div>
+        <ButtonToolbar className="btn-list-filter">
+          <Button onClick={this.sayHello}>Hoje</Button>
+          <Button >Última Semana</Button>
+          <Button >Último Mês</Button>
+          <Button >Outro Período</Button>
+        </ButtonToolbar>
+      </div>
     )
   }
 } 

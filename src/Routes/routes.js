@@ -6,7 +6,7 @@ import Clientes from '../pages/Clientes/index';
 import BarraHorizontal from '../components/BarraHorizontal/index';
 import Nav from '../components/Nav/index';
 
-import NavMainRouterFaturamento from '../components/NavMainRouter';
+import NavMainRouter from '../components/NavMainRouter';
 
 const Routes = () => (
   <div className="Routes">
@@ -17,7 +17,7 @@ const Routes = () => (
             <BarraHorizontal />
             <div className="main-router-grid">
               <div className="main-router-grid-left">
-                <NavMainRouterFaturamento />
+                <NavMainRouter />
               </div>
               <div className="main-router-grid-right">
                 <Switch>
