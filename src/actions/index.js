@@ -1,4 +1,4 @@
-import { GET_CLIENTES, ADD_CLIENTE, UPDATE_CLIENTE, REMOVE_CLIENTE, SET_ORDENACAO, SET_PESQUISA, GET_TRANSACTIONS } from './types';
+import { GET_CLIENTES, ADD_CLIENTE, UPDATE_CLIENTE, REMOVE_CLIENTE, SET_ORDENACAO, SET_PESQUISA, GET_TRANSACTIONS} from './types';
 import db from '../data/json_desafio.json';
 const data = db.customers;
 const transactions = db.transactions;

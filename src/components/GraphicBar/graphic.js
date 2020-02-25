@@ -44,15 +44,15 @@ class Graphic extends React.Component {
 
     const data = [
       ["Task", "Valor Total",'Valor Total'],
-      ["Receitas", total,0],
-      ["Despesas", 0,despesas]
+      ["Receitas", 0,total],
+      ["Despesas", despesas,0]
     ];
     const options = {
       pieHole: 0.8,
       is3D: false,
       legend: { position: 'none' },
       height:300,
-      colors: ['#22D7AD', 'rgb(254, 79, 100)']
+      colors: ['rgb(254, 79, 100)','#22D7AD']
     };
     const rootProps={'data-testid': '3'}
     return (

@@ -2,9 +2,14 @@ import React, {Component} from 'react';
 import './styles.css';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import open from '../Nav/index';
 
 class BarraHorizontal extends Component{
+
+  sayHello() {
+    alert('Hello!');
+    console.log("aeeeeeeee");
+  }
+
   render() {
     return (
       <header className="BarraHorizontal">
@@ -13,7 +18,7 @@ class BarraHorizontal extends Component{
             id="IconButton" 
             type="submit"  
             aria-label="Manu"
-            onClick={open}
+            onClick={this.sayHello}
           >
           <MenuIcon />
           </IconButton>

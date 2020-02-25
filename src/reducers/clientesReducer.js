@@ -1,4 +1,4 @@
-import { GET_CLIENTES, ADD_CLIENTE, UPDATE_CLIENTE, REMOVE_CLIENTE, SET_ORDENACAO, SET_PESQUISA, GET_TRANSACTIONS } from '../actions/types';
+import { GET_CLIENTES, ADD_CLIENTE, UPDATE_CLIENTE, REMOVE_CLIENTE, SET_ORDENACAO, SET_PESQUISA, GET_TRANSACTIONS} from '../actions/types';
 
 export default (state = {ordenacao: "a-z"}, action) => {
   switch(action.type){

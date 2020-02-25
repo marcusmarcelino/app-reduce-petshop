@@ -64,7 +64,7 @@ class GraphicCircle extends Component {
             <p className="value-graphic">
               {banhoEtosa}
             </p>
-            <p>{perBanTosa}%</p>
+            <p>({perBanTosa}%)</p>
           </div>
         </div>
         <div className="d-flex">
@@ -76,7 +76,7 @@ class GraphicCircle extends Component {
             <p className="value-graphic">
               {consultas}
             </p>
-            <p>{perCons}%</p>
+            <p>({perCons}%)</p>
           </div>
         </div>
         <div className="d-flex">
@@ -88,7 +88,7 @@ class GraphicCircle extends Component {
             <p className="value-graphic">
               {medicamentos}
             </p>
-            <p>{percMed}%</p>
+            <p>({percMed}%)</p>
           </div>
         </div>
         <div className="d-flex">
