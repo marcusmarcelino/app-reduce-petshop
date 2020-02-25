@@ -31,9 +31,4 @@ div.client-list {
   .Opcoes {
     padding-left: 1rem;
   }
-
-  /*.cliente-table {
-    overflow: auto;
-    min-width: 600px;
-  }*/
 }
