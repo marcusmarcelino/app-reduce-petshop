@@ -1,0 +1,37 @@
+header.ContentValueTotal {
+  border-bottom: 1px solid #7376892c;
+}
+
+.ContentValueTotal ul li{
+  font-family: "Avenir Medium";
+}
+
+header.ContentValueTotal ul {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+header.ContentValueTotal ul li:first-child{
+  margin-top: 20px;
+}
+
+header.ContentValueTotal ul li{
+  font-size: 25px;
+  color: #09D0A3;
+}
+
+header.ContentValueTotal ul li.content-money{
+  font-size: 70px;
+}
+header.ContentValueTotal ul{
+  margin-top: 0;
+}
+header.ContentValueTotal h4{
+  margin-bottom: -15px;
+}
+
+@media only screen and (max-width: 900px) {
+  header.ContentValueTotal ul{
+    padding: 0;
+  }
+}

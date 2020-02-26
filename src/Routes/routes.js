@@ -30,5 +30,4 @@ const Routes = () => (
       </BrowserRouter>
   </div>
 );
-
 export default Routes;
