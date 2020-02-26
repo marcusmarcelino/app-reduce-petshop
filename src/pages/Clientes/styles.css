@@ -1,7 +1,5 @@
 div.client-list {
-  padding-top: 20px;
-  /*display: grid;
-  grid-template-columns: 150px auto;*/
+  margin-top: 2rem;
 }
 
 .Opcoes {

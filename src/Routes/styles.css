@@ -5,7 +5,7 @@ div.main-router{
 
 div.main-router-grid{
   display: grid;
-  grid-template-columns: 130px auto;
+  grid-template-columns: 150px auto;
 }
 
 div.Routes div.main-router ul li,
@@ -15,7 +15,7 @@ div.Routes div.main-router ul li a{
   text-transform: uppercase;
 }
 
-p, h1,h2,h3,h4{
+p, h1,h2,h3,h4,a,Link,button{
   text-transform: uppercase;
 }
 
