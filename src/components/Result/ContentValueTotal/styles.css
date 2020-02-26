@@ -2,6 +2,10 @@ header.ContentValueTotal {
   border-bottom: 1px solid #7376892c;
 }
 
+.ContentValueTotal ul li{
+  font-family: "Avenir Medium";
+}
+
 header.ContentValueTotal ul {
   display: flex;
   align-items: end;

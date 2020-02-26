@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 import "./styles.css";
-import * as actions from '../../actions/index';
+import * as actions from '../../../actions/index';
 
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';

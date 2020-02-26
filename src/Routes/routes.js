@@ -3,10 +3,9 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import './styles.css';
 import Result from '../pages/Result/index';
 import Clientes from '../pages/Clientes/index';
-import BarraHorizontal from '../components/BarraHorizontal/index';
-import Nav from '../components/Nav/index';
-
-import NavMainRouter from '../components/NavMainRouter';
+import BarraHorizontal from '../components/Routes/BarraHorizontal/index';
+import Nav from '../components/Routes/Nav/index';
+import NavMainRouter from '../components/Routes/NavMainRouter';
 
 const Routes = () => (
   <div className="Routes">

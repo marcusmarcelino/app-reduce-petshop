@@ -1,27 +1,13 @@
 import React, {Component} from 'react';
 import './styles.css';
-import MenuIcon from '@material-ui/icons/Menu';
-import IconButton from '@material-ui/core/IconButton';
+import MenuExpansive from './BntOpen'
 
 class BarraHorizontal extends Component{
-
-  sayHello() {
-    alert('Hello!');
-    console.log("aeeeeeeee");
-  }
-
   render() {
     return (
       <header className="BarraHorizontal">
         <div className="iconButton-horizontal">
-          <IconButton
-            id="IconButton" 
-            type="submit"  
-            aria-label="Manu"
-            onClick={this.sayHello}
-          >
-          <MenuIcon />
-          </IconButton>
+          <MenuExpansive />
         </div>        
         <ul>
           <li>Petshop</li>

@@ -1,0 +1,58 @@
+.Nav-NavMainRouter {
+  margin-top: 2rem;
+  font-family: "Avenir Heavy";
+}
+
+.Nav-NavMainRouter .btn-nav-list {
+  margin-left: 30px;
+}
+
+.Nav-NavMainRouter .btn-nav-list Button{
+  background-color: transparent;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.Nav-NavMainRouter .btn-nav-list a{
+  color: #737689;
+  opacity: 0.5;
+  display: flex;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+.Nav-NavMainRouter .btn-nav-list a:hover,
+.Nav-NavMainRouter .btn-nav-list a:active,
+.Nav-NavMainRouter .btn-nav-list a:focus {
+  border:none;
+  border-color: none;
+  opacity: 1;
+  background-color: none;
+  color: #737689;
+  border-style: none;
+  outline: none;
+  border-color: none !important;
+  outline: 0;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important
+}
+
+.Nav-NavMainRouter .btn-nav-list a span{
+  margin-left: .5rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .btn-nav-list {
+    display: flex;
+  }
+
+  .btn-nav-list a{
+    margin-right: 1rem;
+  }
+
+  .Nav-NavMainRouter .btn-nav-list{
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+  }
+}

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './styles.css';
 //import NavMainRouter from '../../components/NavMainRouter';<NavMainRouter />
-import FilterNav from '../../components/FilterNav';
-import ContentValueTotal from '../../components/ContentValueTotal';
-import GraphicCircle from '../../components/GraphicCircle';
-import GraphicBar from '../../components/GraphicBar';
+import FilterNav from '../../components/Result/FilterNav';
+import ContentValueTotal from '../../components/Result/ContentValueTotal';
+import GraphicCircle from '../../components/Result/GraphicCircle';
+import GraphicBar from '../../components/Result/GraphicBar';
 
 class Result extends Component {
   render() {

@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Chart from "react-google-charts";
 import { connect } from 'react-redux';
-import * as actions from '../../actions/index';
+import * as actions from '../../../actions/index';
 
 class Graphic extends React.Component {
-
+  
   componentDidMount(){
     this.props.getTransactions();
   }
@@ -52,7 +52,9 @@ class Graphic extends React.Component {
       is3D: false,
       legend: { position: 'none' },
       height:300,
-      colors: ['rgb(254, 79, 100)','#22D7AD']
+      colors: ['rgb(254, 79, 100)','#22D7AD'],
+      vAxis: {format: "R$#,###"},
+      
     };
     const rootProps={'data-testid': '3'}
     return (

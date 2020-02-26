@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 import { connect } from 'react-redux';
-import * as actions from '../../actions/index';
+import * as actions from '../../../actions/index';
 
 const Cliente = ({cliente}) => (
   <tr className="row">

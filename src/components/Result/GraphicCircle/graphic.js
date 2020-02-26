@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Chart from "react-google-charts";
 import { connect } from 'react-redux';
-import * as actions from '../../actions/index';
+import * as actions from '../../../actions/index';
 
 
 class Graphic extends React.Component {
@@ -32,10 +32,13 @@ class Graphic extends React.Component {
 
     const options = {
       tooltip: { trigger: 'selection' },
-      pieHole: 0.8,
+      pieHole: 0.7,
       is3D: false,
-      legend: "none",
-      colors: ['#BE2FBC', '#6333B6','#4C7ABF']
+      colors: ['#BE2FBC', '#6333B6','#4C7ABF'],
+      tooltips: false,
+      legend: 'none',
+      pieSliceText: 'none'
+
     };
 
     const data = [

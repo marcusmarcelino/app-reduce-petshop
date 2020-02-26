@@ -13,10 +13,10 @@ class FilterNav extends Component {
   sayHello() {
     alert('Hello!');;
   }
-  //<Button >Warning</Button>//variant="warning"
+
   render() {
     return (
-      <div>
+      <div className="FilterNav">
         <ButtonToolbar className="btn-list-filter">
           <Button onClick={this.sayHello}>Hoje</Button>
           <Button >Última Semana</Button>

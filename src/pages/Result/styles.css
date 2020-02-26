@@ -1,7 +1,5 @@
 div.Result {
-  padding-top: 20px;
-  /*display: grid;
-  grid-template-columns: 150px auto;*/
+  padding-top: 2rem;
 }
 
 div.result-content {
@@ -64,7 +62,7 @@ div.content-graphics .GraphicBar {
 .value-graphic{
   font-family: "Avenir Black";
   color: #4A4A4A;
-  font-size: 12
+  font-size: 12px;
 }
 
 div.d-flex.value-graphic p {

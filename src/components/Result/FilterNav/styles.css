@@ -1,0 +1,47 @@
+.FilterNav .btn-list-filter{
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.FilterNav .btn-list-filter Button{
+  background-color: #09D0A3;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  margin: 0 5px;
+  opacity: 0.5;
+  padding: 5px 15px;
+  color: #fff;
+}
+
+.FilterNav .btn-list-filter Button:hover,
+.FilterNav .btn-list-filter Button:active,
+.FilterNav .btn-list-filter Button:focus {
+  border:none;
+  border-color: none;
+  opacity: 1;
+  background-color: #09D0A3;
+  border-style: none;
+  outline: none;
+  border-color: none !important;
+  outline: 0;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important
+}
+
+@media only screen and (max-width: 900px) {
+  .FilterNav .btn-list-filter Button,
+  ul.FilterNav li button{
+    font-size: 11px;
+    margin: 0 1px;
+  }
+
+  .FilterNav .btn-list-filter{
+    justify-content: center;
+    text-align: center;
+  }
+
+  .FilterNav .btn-list-filter Button{
+    padding: 6px 5px;
+  }
+}
