@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions/index';
 
 import { Button, ButtonToolbar } from 'react-bootstrap';
-
 import Chart from "react-google-charts";
 
 class Result extends Component {
@@ -21,6 +20,8 @@ class Result extends Component {
     this.filterHoje = this.filterHoje.bind(this);
     this.filterMes = this.filterMes.bind(this);
     this.filterOutros = this.filterOutros.bind(this);
+    this.filterSemana = this.filterSemana.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   async componentDidMount(){
@@ -85,12 +86,11 @@ class Result extends Component {
     const dateSplit=date.split(' ');
     const dateSemTime=dateSplit[0].split('-')
     const novadata = dateSemTime[2] + "" +(dateSemTime[1])+""+dateSemTime[0];
-    
     return novadata;
   }
 
   diaAtualFunc(){
-    const dataAtual = new Date();
+    const dataAtual = new Date();   
     const dia = dataAtual.getDate();
     const mes = dataAtual.getMonth();
     const ano = dataAtual.getFullYear();
@@ -99,11 +99,91 @@ class Result extends Component {
     return diaAtual;
   }
 
+  findSemana(date){
+    const dateSplit=date.split(' ');
+    const dateSemTime=dateSplit[0].split('-')
+    const novadataNew = new Date(dateSemTime[1]+"/"+dateSemTime[2]+"/"+dateSemTime[0]);
+
+    return novadataNew;
+  }
+  
+  filterSemana(){
+    const dataAtual = new Date();
+    //const dataTransaction = this.findSemana("2020-02-27 10:00:40.000000");
+    //console.log(dataTransaction.getDay()+"==transaction=="+dataTransaction.getMonth());
+    //console.log(dataAtual.getDay()+"==local=="+dataAtual.getMonth());
+
+    const data = this.props.getTransactions().transactions;
+    const transactionsDoDia = [];
+    //console.log(dataAtual.getDay());
+    for (var d in data) {
+      const dataTransaction = this.findSemana(data[d].time);
+
+      if(dataAtual.getFullYear() === dataTransaction.getFullYear() 
+          && dataAtual.getMonth() === dataTransaction.getMonth()){
+            if(dataAtual.getDay() >= 1 
+              && dataAtual.getDay() <= 6 
+              && dataTransaction.getDay() >= 1 
+              && dataTransaction.getDay() <= 6){
+
+                if(dataAtual.getDay()===1 && dataTransaction.getDay() === 1){
+                  if(dataTransaction.getDate() === dataAtual.getDate()){
+                    console.log("Sim funfou");
+                    transactionsDoDia.push(data[d]);
+                  }
+                }
+
+                if(dataAtual.getDay()===2 
+                  && dataTransaction.getDay() >= (dataAtual.getDay() - 1)){
+                  if(dataTransaction.getDate() <= dataAtual.getDate() 
+                    && dataTransaction.getDate() >= (dataAtual.getDate() - 1)
+                  ){
+                    console.log("Hoje é quarta e essas as transações da semana");
+                    transactionsDoDia.push(data[d]);
+                  }
+                }
+
+                if(dataAtual.getDay()===3 
+                && dataTransaction.getDay() >= (dataAtual.getDay() - 2)){
+                  if(dataTransaction.getDate() <= dataAtual.getDate() 
+                    && dataTransaction.getDate() >= (dataAtual.getDate() - 2)
+                  ){
+                    console.log("Hoje é quarta e essas as transações da semana");
+                    transactionsDoDia.push(data[d]);
+                  }
+                }
+
+                if(dataAtual.getDay() === 4 
+                  && dataTransaction.getDay() >= (dataAtual.getDay() - 3) ){
+                  if(dataTransaction.getDate() <= dataAtual.getDate() 
+                    && dataTransaction.getDate() >= (dataAtual.getDate() - 3)
+                  ){
+                    console.log("Hoje é quinta e essas as transações da semana");
+                    transactionsDoDia.push(data[d]);
+                  }
+                }
+
+                if(dataAtual.getDay()===5
+                  && dataTransaction.getDay() >= (dataAtual.getDay() - 4) ){
+                  if(dataTransaction.getDate() <= dataAtual.getDate() 
+                    && dataTransaction.getDate() >= (dataAtual.getDate() - 4)
+                  ){
+                    console.log("Hoje é sexta e essas as transações da semana");
+                    transactionsDoDia.push(data[d]);
+                  }
+                }
+            }
+      }
+    }
+    this.setState({transactions:transactionsDoDia});
+  }
+
   filterHoje(){
     const data = this.props.getTransactions().transactions;
     const transactionsDoDia = [];
     for (var d in data) {
       if(this.findDia(data[d].time) === this.diaAtualFunc()){
+        console.log(this.findDia(data[d].time) +"==="+ this.diaAtualFunc());
         transactionsDoDia.push(data[d]);
       }
     }
@@ -139,7 +219,6 @@ class Result extends Component {
     return(receitas-despesas)
   }
   
-
   render() {
 
     const transactions = this.state.transactions;
@@ -199,14 +278,16 @@ class Result extends Component {
       vAxis: {format: "R$#,###"},
       
     };
-    const rootProps={'data-testid': '3'}
+    const rootProps={
+      'data-testid': '3'
+    }
 
     return (
       <div className="Result">
         <div className="FilterNav">
           <ButtonToolbar className="btn-list-filter">
             <Button onClick={this.filterHoje}>Hoje</Button>
-            <Button >Última Semana</Button>
+            <Button onClick={this.filterSemana}>Última Semana</Button>
             <Button onClick={this.filterMes}>Último Mês</Button>
             <Button onClick={this.filterOutros}>Outro Período</Button>
           </ButtonToolbar>
