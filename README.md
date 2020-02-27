@@ -7,12 +7,24 @@
 <p align="center">Projeto <strong>App-Reduce-Petshop</strong></p>
 
 <p align="center">
-  <a aria-label="Versão do Node" href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V12.md#12.14.1">
-    <img src="https://img.shields.io/badge/node.js@lts-12.14.1-informational?logo=Node.JS"></img>
-  </a>
-
   <a aria-label="Versão do React" href="#">
     <img src="https://img.shields.io/badge/react-16.12.0-informational?logo=react"></img>
+  </a>
+
+  <a aria-label="Versão do Redux" href="#">
+    <img src="https://img.shields.io/badge/redux@lts-4.0.5-informational?logo=Redux"></img>
+  </a>
+
+  <a aria-label="Versão do Chart" href="#">
+    <img src="https://img.shields.io/badge/chart.js@lts-2.9.3-informational?logo=Chart"></img>
+  </a>
+
+  <a aria-label="Material-ui" href="#">
+    <img src="https://img.shields.io/badge/%40material--ui%2Fcore-4.9.3-brightgreen"></img>
+  </a>
+
+  <a aria-label="Material-ui" href="#">
+    <img src="https://img.shields.io/badge/%40material--ui%2Ficons-4.9.1-brightgreen"></img>
   </a>
 
   <a aria-label="License" href="#">
