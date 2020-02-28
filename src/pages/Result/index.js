@@ -272,14 +272,12 @@ class Result extends Component {
 
     return (
       <div className="Result">
-        <div className="FilterNav">
-          <ButtonToolbar className="btn-list-filter">
-            <Button onClick={this.filterHoje}>Hoje</Button>
-            <Button onClick={this.filterSemana}>Última Semana</Button>
-            <Button onClick={this.filterMes}>Último Mês</Button>
-            <Button onClick={this.filterOutros}>Outro Período</Button>
-          </ButtonToolbar>
-        </div>
+        <FilterNav 
+          filterHoje={this.filterHoje}
+          filterSemana={this.filterSemana}
+          filterMes={this.filterMes}
+          filterOutros={this.filterOutros}
+        />
         <div className="result-content">
           <ContentValueTotal format={format} />
           <div className="content-graphics">
