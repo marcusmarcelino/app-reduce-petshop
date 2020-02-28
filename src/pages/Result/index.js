@@ -11,7 +11,8 @@ import * as actions from '../../actions/index';
 
 class Result extends Component {
   state = {
-    transactions:{}
+    transactions:{},
+    classNameGroup: "hoje"
   };
 
   constructor(props) {
@@ -25,7 +26,11 @@ class Result extends Component {
 
   async componentDidMount(){
     const dados = await this.props.getTransactions().transactions;
-    this.setState({transactions:dados});
+    await this.setState({transactions:dados});
+  }
+
+   todos () {
+    
   }
 
   total = (transactions) => {
@@ -108,13 +113,10 @@ class Result extends Component {
   
   filterSemana(){
     const dataAtual = new Date();
-    //const dataTransaction = this.findSemana("2020-02-27 10:00:40.000000");
-    //console.log(dataTransaction.getDay()+"==transaction=="+dataTransaction.getMonth());
-    //console.log(dataAtual.getDay()+"==local=="+dataAtual.getMonth());
 
     const data = this.props.getTransactions().transactions;
     const transactionsDoDia = [];
-    //console.log(dataAtual.getDay());
+
     for (var d in data) {
       const dataTransaction = this.findSemana(data[d].time);
 
@@ -175,6 +177,7 @@ class Result extends Component {
       }
     }
     this.setState({transactions:transactionsDoDia});
+    this.setState({classNameGroup:'semana'});
   }
 
   filterHoje(){
@@ -187,6 +190,7 @@ class Result extends Component {
       }
     }
     this.setState({transactions:transactionsDoDia});
+    this.setState({classNameGroup:'hoje'});
   }
 
   filterMes(){
@@ -198,10 +202,12 @@ class Result extends Component {
       }
     }
     this.setState({transactions:transactionsDoDia});
+    this.setState({classNameGroup:'mes'});
   }
 
   filterOutros(){
     this.componentDidMount();
+    this.setState({classNameGroup:'outros'});
   }
 
   totalLiquido = (data) => {
@@ -275,6 +281,7 @@ class Result extends Component {
           filterSemana={this.filterSemana}
           filterMes={this.filterMes}
           filterOutros={this.filterOutros}
+          classNameBtn={this.state.classNameGroup}
         />
         <div className="result-content">
           <ContentValueTotal format={format} />

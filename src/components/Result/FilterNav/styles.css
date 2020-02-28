@@ -29,6 +29,14 @@
   box-shadow: none !important
 }
 
+Button.default{
+  opacity: 0.5!important;
+}
+
+Button.active{
+  opacity: 1!important;
+}
+
 @media only screen and (max-width: 900px) {
   .FilterNav .btn-list-filter Button,
   ul.FilterNav li button{
