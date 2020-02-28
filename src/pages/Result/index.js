@@ -9,8 +9,6 @@ import GraphicBar from '../../components/Result/GraphicBar/index';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/index';
 
-import { Button, ButtonToolbar } from 'react-bootstrap';
-
 class Result extends Component {
   state = {
     transactions:{}
