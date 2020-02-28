@@ -64,7 +64,7 @@ const GraphicCircle = ({data,options, banhoEtosa,perBanTosa, consultas, perCons,
         <p>Total</p>
       </div>
       <div className="d-flex value-graphic">
-        <p>{total}</p><p>(100%)</p>
+        <p>{total.toLocaleString('pt-BR', {minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}</p><p>(100%)</p>
       </div>
     </div>
   </div>

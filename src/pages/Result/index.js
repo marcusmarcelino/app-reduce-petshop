@@ -4,12 +4,12 @@ import './styles.css';
 import FilterNav from '../../components/Result/FilterNav';
 import ContentValueTotal from '../../components/Result/ContentValueTotal';
 import GraphicCircle from '../../components/Result/GraphicCircle/index';
+import GraphicBar from '../../components/Result/GraphicBar/index';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions/index';
 
 import { Button, ButtonToolbar } from 'react-bootstrap';
-import Chart from "react-google-charts";
 
 class Result extends Component {
   state = {
@@ -223,19 +223,10 @@ class Result extends Component {
   render() {
     
     const { transactions } = this.state;
-    const total2 = this.total(transactions);
 
-    const format = this.totalLiquido(transactions).toLocaleString('pt-BR', {minimumFractionDigits: 2, currency: 'BRL' });
-    
-    
+    const format = this.totalLiquido(transactions).toLocaleString('pt-BR', {minimumFractionDigits: 2, currency: 'BRL' });    
 
-    const despesas2 = this.despesas(transactions,"Despesas");
-    const despesas = this.despesas(transactions,"Despesas").toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    
-    
-
-
-    const options = {
+    const ChartDonutOptions = {
       tooltip: { trigger: 'selection' },
       pieHole: 0.7,
       is3D: false,
@@ -245,7 +236,7 @@ class Result extends Component {
       pieSliceText: 'none'
 
     };
-    const data = [
+    const ChartDonutData = [
       ["Task", ""],
       ["Banho & Tosa", this.porcentagem(transactions,"Banho & Tosa")],
       ["Consultas", this.porcentagem(transactions,"Consultas")],
@@ -257,17 +248,16 @@ class Result extends Component {
     const perCons = this.porcentagem(transactions,"Consultas");
     const medicamentos = this.format(transactions,"Medicamentos");
     const percMed = this.porcentagem(transactions,"Medicamentos");
-    const total = this.total(transactions).toLocaleString('pt-BR', {minimumFractionDigits: 2, style: 'currency', currency: 'BRL' });
+    
+    const total = this.total(transactions);
 
-
-
-    const data2 = [
+    const despesas = this.despesas(transactions,"Despesas");
+    const ColumnChartData = [
       ["Task", "Valor Total",'Valor Total'],
-      ["Receitas", 0,total2],
-      ["Despesas", despesas2,0]
+      ["Receitas", 0,total],
+      ["Despesas", despesas,0]
     ];
-
-    const options2 = {
+    const ColumnChartOptions = {
       pieHole: 0.8,
       is3D: false,
       legend: { position: 'none' },
@@ -276,7 +266,7 @@ class Result extends Component {
       vAxis: {format: "R$#,###"},
       
     };
-    const rootProps={
+    const ColumnChartRootProps={
       'data-testid': '3'
     }
 
@@ -294,8 +284,8 @@ class Result extends Component {
           <ContentValueTotal format={format} />
           <div className="content-graphics">
             <GraphicCircle 
-              data={data} 
-              options={options} 
+              data={ChartDonutData} 
+              options={ChartDonutOptions} 
               banhoEtosa={banhoEtosa} 
               perBanTosa={perBanTosa} 
               consultas={consultas}
@@ -305,39 +295,14 @@ class Result extends Component {
               total={total}
             />
             
-            <div className="GraphicBar">
-              <h4 className="result-content-title">Despesas X Receitas</h4>
-              <div>
-                <Chart
-                  chartType="ColumnChart"
-                  legendToggle="none"
-                  subtitle="none"
-                  width="100%"
-                  data={data2}
-                  options={options2}
-                  rootProps={rootProps}
-                />
-              </div>
-              <div className="d-flex">
-                <div className="d-flex legend-graphic">
-                  <div className="rounded receitas"></div><p>Receitas</p>
-                </div>
-                <div className="d-flex value-graphic">
-                  <p>{total}</p><p>(50%)</p>
-                </div>
-              </div>
-              <div className="d-flex">
-                <div className="d-flex legend-graphic">
-                  <div className="rounded despesas"></div>
-                  <p>Despesas</p>
-                </div>
-                <div className="d-flex value-graphic">
-                  <p>{despesas}</p><p>(30%)</p>
-                </div>
-              </div>
-            </div>
+            <GraphicBar
+              data={ColumnChartData}
+              options={ColumnChartOptions}
+              rootProps={ColumnChartRootProps}
+              total={total}
+              despesas={despesas}
+            />
           </div>
-          
         </div>
       </div>  
     );
