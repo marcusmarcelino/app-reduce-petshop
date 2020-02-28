@@ -3,6 +3,7 @@ import './styles.css';
 
 import FilterNav from '../../components/Result/FilterNav';
 import ContentValueTotal from '../../components/Result/ContentValueTotal';
+import GraphicCircle from '../../components/Result/GraphicCircle/index';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions/index';
@@ -220,21 +221,13 @@ class Result extends Component {
   }
   
   render() {
-
-    const transactions = this.state.transactions;
-    const total = this.total(transactions).toLocaleString('pt-BR', {minimumFractionDigits: 2, style: 'currency', currency: 'BRL' });
+    
+    const { transactions } = this.state;
     const total2 = this.total(transactions);
 
     const format = this.totalLiquido(transactions).toLocaleString('pt-BR', {minimumFractionDigits: 2, currency: 'BRL' });
     
-    const banhoEtosa = this.format(transactions,"Banho & Tosa");
-    const perBanTosa = this.porcentagem(transactions,"Banho & Tosa");
     
-    const consultas = this.format(transactions,"Consultas");
-    const perCons = this.porcentagem(transactions,"Consultas");
-
-    const medicamentos = this.format(transactions,"Medicamentos");
-    const percMed = this.porcentagem(transactions,"Medicamentos");
 
     const despesas2 = this.despesas(transactions,"Despesas");
     const despesas = this.despesas(transactions,"Despesas").toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -244,6 +237,8 @@ class Result extends Component {
     const perConsGraphic = this.totalPorTipo(transactions,"Consultas");
 
     const percMedGraphic = this.totalPorTipo(transactions,"Medicamentos");
+
+
 
     const options = {
       tooltip: { trigger: 'selection' },
@@ -255,13 +250,21 @@ class Result extends Component {
       pieSliceText: 'none'
 
     };
-
     const data = [
       ["Task", ""],
       ["Banho & Tosa", perBanTosaGraphic],
       ["Consultas", perConsGraphic],
       ["Medicamentos", percMedGraphic]
     ];
+    const banhoEtosa = this.format(transactions,"Banho & Tosa");
+    const perBanTosa = this.porcentagem(transactions,"Banho & Tosa");
+    const consultas = this.format(transactions,"Consultas");
+    const perCons = this.porcentagem(transactions,"Consultas");
+    const medicamentos = this.format(transactions,"Medicamentos");
+    const percMed = this.porcentagem(transactions,"Medicamentos");
+    const total = this.total(transactions).toLocaleString('pt-BR', {minimumFractionDigits: 2, style: 'currency', currency: 'BRL' });
+
+
 
     const data2 = [
       ["Task", "Valor Total",'Valor Total'],
@@ -293,81 +296,20 @@ class Result extends Component {
           </ButtonToolbar>
         </div>
         <div className="result-content">
-          <header className="ContentValueTotal">
-            <h4 className="result-content-title">
-              Valor Total
-            </h4>
-            <ul>
-              <li className="label-money">
-                R$
-              </li>
-              <li className="content-money">
-                {format}
-              </li>
-            </ul>
-          </header>
+          <ContentValueTotal format={format} />
           <div className="content-graphics">
-            <div className="GraphicCircle">
-              <h4 className="result-content-title">Serviços</h4>
-              <div>
-                <Chart
-                  
-                  chartType="PieChart"
-                  legend="none"
-                  legendToggle="none"
-                  subtitle="none"
-                  pieSliceText="none"
-                  width="100%"
-                  height="200px"
-                  data={data}
-                  options={options}
-                />
-              </div>
-              <div className="d-flex">
-                <div className="d-flex">
-                  <div className="rounded banho-tosa"></div>
-                  <p className="legend-graphic">Banho e Tosa</p>
-                </div>
-                <div className="d-flex value-graphic">
-                  <p className="value-graphic">
-                    {banhoEtosa}
-                  </p>
-                  <p>({perBanTosa}%)</p>
-                </div>
-              </div>
-              <div className="d-flex">
-                <div className="d-flex">
-                  <div className="rounded consultas"></div>
-                  <p className="legend-graphic">Consultas</p>
-                </div>
-                <div className="d-flex value-graphic">
-                  <p className="value-graphic">
-                    {consultas}
-                  </p>
-                  <p>({perCons}%)</p>
-                </div>
-              </div>
-              <div className="d-flex">
-                <div className="d-flex">
-                  <div className="rounded medicamentos"></div>
-                  <p className="legend-graphic">Medicamentos</p>
-                </div>
-                <div className="d-flex value-graphic">
-                  <p className="value-graphic">
-                    {medicamentos}
-                  </p>
-                  <p>({percMed}%)</p>
-                </div>
-              </div>
-              <div className="d-flex">
-                <div className="legend-graphic total">
-                  <p>Total</p>
-                </div>
-                <div className="d-flex value-graphic">
-                  <p>{total}</p><p>(100%)</p>
-                </div>
-              </div>
-            </div>
+            <GraphicCircle 
+              data={data} 
+              options={options} 
+              banhoEtosa={banhoEtosa} 
+              perBanTosa={perBanTosa} 
+              consultas={consultas}
+              perCons={perCons}
+              medicamentos={medicamentos}
+              percMed={percMed}
+              total={total}
+            />
+            
             <div className="GraphicBar">
               <h4 className="result-content-title">Despesas X Receitas</h4>
               <div>
@@ -400,6 +342,7 @@ class Result extends Component {
               </div>
             </div>
           </div>
+          
         </div>
       </div>  
     );
