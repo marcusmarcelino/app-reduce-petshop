@@ -232,12 +232,7 @@ class Result extends Component {
     const despesas2 = this.despesas(transactions,"Despesas");
     const despesas = this.despesas(transactions,"Despesas").toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     
-    const perBanTosaGraphic = this.totalPorTipo(transactions,"Banho & Tosa");
     
-    const perConsGraphic = this.totalPorTipo(transactions,"Consultas");
-
-    const percMedGraphic = this.totalPorTipo(transactions,"Medicamentos");
-
 
 
     const options = {
@@ -252,9 +247,9 @@ class Result extends Component {
     };
     const data = [
       ["Task", ""],
-      ["Banho & Tosa", perBanTosaGraphic],
-      ["Consultas", perConsGraphic],
-      ["Medicamentos", percMedGraphic]
+      ["Banho & Tosa", this.porcentagem(transactions,"Banho & Tosa")],
+      ["Consultas", this.porcentagem(transactions,"Consultas")],
+      ["Medicamentos", this.porcentagem(transactions,"Medicamentos")]
     ];
     const banhoEtosa = this.format(transactions,"Banho & Tosa");
     const perBanTosa = this.porcentagem(transactions,"Banho & Tosa");
