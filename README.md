@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="200" width="200" src="./telas/logo.svg" align="center"></img>
+  <img height="200" width="200" src="./img/logo.svg" align="center"></img>
 </div>
 
 <h1 align="center"> <strong> Teste Eyemobile-Frontend-React </strong> </h1>
