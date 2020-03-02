@@ -5,13 +5,32 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import { NavLink} from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 
+import history from '../../../Routes/history';
+
 class NavMainRouter extends Component{
+<<<<<<< HEAD
+=======
+  state = {
+    rota: "home"
+  };
+
+  componentDidMount(){
+    const unlisten = history.listen((location, action) => {
+      //console.log(action, location.pathname, location.state);
+      if(location.pathname === "/clientes"){
+        this.setState({rota:'clientes'});
+      }else{
+        this.setState({rota:'home'});
+      }
+    });
+  }
+>>>>>>> version1.1
   render() {
     return (
       <div className="Nav-NavMainRouter">
         <Nav className="btn-nav-list">
-          <NavLink activeClassName='is-active' to='/'><MonetizationOnIcon /> <span>Totais</span> </NavLink>
-          <NavLink activeClassName='is-active' to='/clientes'><PeopleAltIcon /><span>Clientes</span></NavLink>
+          <NavLink className={((this.state.rota ==='home') ?'active':'default')} activeClassName='is-active' to='/'><MonetizationOnIcon /> <span>Totais</span> </NavLink>
+          <NavLink className={((this.state.rota ==='clientes') ?'active':'default')} activeClassName='is-active' to='/clientes'><PeopleAltIcon /><span>Clientes</span></NavLink>
         </Nav>
       </div>
     );

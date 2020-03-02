@@ -36,12 +36,16 @@ nav.nav-lateral ul.nav li a {
   font-size: 12px;
 }
 
-nav.nav-lateral ul.nav li a:hover {
+nav.nav-lateral ul.nav li a.default{
+  color: #049C7A;
+}
+
+nav.nav-lateral ul.nav li a.active{
   color: #FFF;
 }
 
-nav.nav-lateral ul.nav li:nth-child(3) a{
-  color: #049C7A;
+nav.nav-lateral ul.nav li a:hover {
+  color: #FFF;
 }
 
 @media only screen and (max-width: 900px) {

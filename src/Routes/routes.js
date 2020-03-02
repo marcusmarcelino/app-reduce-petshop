@@ -1,15 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import './styles.css';
+
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+
 import Result from '../pages/Result/index';
 import Clientes from '../pages/Clientes/index';
 import BarraHorizontal from '../components/Routes/BarraHorizontal/index';
 import Nav from '../components/Routes/Nav/index';
 import NavMainRouter from '../components/Routes/NavMainRouter';
+import history from './history';
 
 const Routes = () => (
   <div className="Routes">
-      <BrowserRouter>
+      <ConnectedRouter history={history}>
         <div className="main-router">
           <Nav />
           <div className="main">
@@ -27,7 +31,7 @@ const Routes = () => (
             </div>
           </div>
         </div>
-      </BrowserRouter>
+      </ConnectedRouter>
   </div>
 );
 export default Routes;
