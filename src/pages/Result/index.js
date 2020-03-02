@@ -120,6 +120,7 @@ class Result extends Component {
     return novadataNew;
   }
   
+  
   filterSemana(){
     const dataAtual = new Date();
 
