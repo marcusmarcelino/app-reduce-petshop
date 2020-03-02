@@ -98,7 +98,7 @@ class Result extends Component {
     const mes = dataAtual.getMonth();
     const ano = dataAtual.getFullYear();
 
-    const diaAtual = dia + '0' + (mes+1) + '' + ano;
+    const diaAtual = '0' + dia + '0' + (mes+1) + '' + ano;
     return diaAtual;
   }
 
@@ -183,6 +183,7 @@ class Result extends Component {
     const data = this.props.getTransactions().transactions;
     const transactionsDoDia = [];
     for (var d in data) {
+      console.log(this.findDia(data[d].time) +"==="+ this.diaAtualFunc());
       if(this.findDia(data[d].time) === this.diaAtualFunc()){
         console.log(this.findDia(data[d].time) +"==="+ this.diaAtualFunc());
         transactionsDoDia.push(data[d]);

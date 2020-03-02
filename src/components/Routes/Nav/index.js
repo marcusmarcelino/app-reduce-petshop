@@ -13,13 +13,13 @@ class Nav extends Component{
             <PetsIcon/>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <a className="nav-link">
               <WidgetsIcon /><br/>
               Meu <br/> Faturamento
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <a className="nav-link">
               <FolderOpenIcon /><br/>
               Cadastro
             </a>

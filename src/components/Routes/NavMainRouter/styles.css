@@ -5,6 +5,7 @@
 
 .Nav-NavMainRouter .btn-nav-list {
   margin-left: 30px;
+  cursor: pointer;
 }
 
 .Nav-NavMainRouter .btn-nav-list Button{
@@ -35,6 +36,14 @@
   outline: 0;
   -webkit-box-shadow: none !important;
   box-shadow: none !important
+}
+
+.btn-nav-list a.default{
+  opacity: 0.5!important;
+}
+
+.btn-nav-list a.active{
+  opacity: 1!important;
 }
 
 .Nav-NavMainRouter .btn-nav-list a span{

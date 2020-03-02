@@ -1,6 +1,6 @@
 .FilterNav .btn-list-filter{
   margin-bottom: 2rem;
-  text-align: left;
+  text-align: left; 
 }
 
 .FilterNav .btn-list-filter Button{
@@ -12,6 +12,7 @@
   opacity: 0.5;
   padding: 5px 15px;
   color: #fff;
+  cursor: pointer;
 }
 
 .FilterNav .btn-list-filter Button:hover,
@@ -19,7 +20,7 @@
 .FilterNav .btn-list-filter Button:focus {
   border:none;
   border-color: none;
-  opacity: 1;
+  opacity: 1!important;
   background-color: #09D0A3;
   border-style: none;
   outline: none;

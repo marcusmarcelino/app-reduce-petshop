@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./styles.css";
 import ClientTable from '../../components/Clientes/ClientTable';
-import Formulario from '../../components/Clientes/Formulario';
 import Ordenacao from  '../../components/Clientes/ClientTable/ordenação';
 import Pesquisa from  '../../components/Clientes/ClientTable/pesquisa';
 

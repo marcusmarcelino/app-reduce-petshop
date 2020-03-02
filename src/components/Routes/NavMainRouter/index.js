@@ -6,9 +6,6 @@ import { NavLink} from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 
 class NavMainRouter extends Component{
-  componentDidMount(){
-    console.log(window.location.href);
-  }
   render() {
     return (
       <div className="Nav-NavMainRouter">
