@@ -98,7 +98,7 @@ class Result extends Component {
     const mes = dataAtual.getMonth();
     const ano = dataAtual.getFullYear();
 
-    const diaAtual = dia + '0' + (mes+1) + '' + ano;
+    const diaAtual ='0' + dia + '0' + (mes+1) + '' + ano;
     return diaAtual;
   }
 

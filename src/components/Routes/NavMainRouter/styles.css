@@ -21,6 +21,14 @@
   margin-bottom: 1.5rem;
 }
 
+.btn-nav-list a.default{
+  opacity: 0.5!important;
+}
+
+.btn-nav-list a.active{
+  opacity: 1!important;
+}
+
 .Nav-NavMainRouter .btn-nav-list a:hover,
 .Nav-NavMainRouter .btn-nav-list a:active,
 .Nav-NavMainRouter .btn-nav-list a:focus {
