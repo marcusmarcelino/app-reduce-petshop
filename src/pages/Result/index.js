@@ -13,7 +13,6 @@ class Result extends Component {
     transactions:{},
     classNameGroup: "hoje"
   };
-
   constructor(props) {
     super(props);
     this.filterHoje = this.filterHoje.bind(this);
