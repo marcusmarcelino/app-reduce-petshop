@@ -17,7 +17,9 @@ div.content-graphics{
   grid-template-columns: 1fr 1fr;
 }
 
-div.content-graphics .GraphicCircle,
+div.content-graphics .GraphicCircle{
+  margin-right: 4rem;
+}
 div.content-graphics .GraphicBar {
   margin-left: 4rem;
 }
@@ -37,10 +39,10 @@ div.content-graphics .GraphicBar {
   }
 
   div.content-graphics .GraphicCircle{
-    margin-right: 0;
+    margin-right: 0!important;
   }
   div.content-graphics .GraphicBar {
-    margin-left: 0;
+    margin-left: 0!important;
   }
 }
 

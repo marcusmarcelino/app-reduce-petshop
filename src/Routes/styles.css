@@ -1,3 +1,7 @@
+p, h1,h2,h3,h4,a,Link,button{
+  text-transform: uppercase;
+}
+
 div.main-router{
   display: grid;
   grid-template-columns: 150px auto;
@@ -8,14 +12,10 @@ div.main-router-grid{
   grid-template-columns: 150px auto;
 }
 
-div.Routes div.main-router ul li,
-div.Routes div.main-router ul li a{
+div.main-router ul li,
+div.main-router ul li a{
   text-decoration: none;
   list-style: none;
-  text-transform: uppercase;
-}
-
-p, h1,h2,h3,h4,a,Link,button{
   text-transform: uppercase;
 }
 
