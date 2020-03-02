@@ -8,8 +8,6 @@ import { Nav } from 'react-bootstrap';
 import history from '../../../Routes/history';
 
 class NavMainRouter extends Component{
-<<<<<<< HEAD
-=======
   state = {
     rota: "home"
   };
@@ -24,7 +22,6 @@ class NavMainRouter extends Component{
       }
     });
   }
->>>>>>> version1.1
   render() {
     return (
       <div className="Nav-NavMainRouter">

@@ -28,21 +28,13 @@ class Nav extends Component{
             <PetsIcon/>
           </li>
           <li className="nav-item">
-<<<<<<< HEAD
-            <a className="nav-link">
-=======
             <a className={((this.state.rota ==='home') ?'active':'default')} href="">
->>>>>>> version1.1
               <WidgetsIcon /><br/>
               Meu <br/> Faturamento
             </a>
           </li>
           <li className="nav-item">
-<<<<<<< HEAD
-            <a className="nav-link">
-=======
             <a className={((this.state.rota ==='cadastro') ?'active':'default')} href="">
->>>>>>> version1.1
               <FolderOpenIcon /><br/>
               Cadastro
             </a>
