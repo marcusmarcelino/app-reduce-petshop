@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./styles.css";
-//import NavMainRouter from '../../components/NavMainRouter';<NavMainRouter />
 import ClientTable from '../../components/Clientes/ClientTable';
 import Formulario from '../../components/Clientes/Formulario';
 import Ordenacao from  '../../components/Clientes/ClientTable/ordenação';

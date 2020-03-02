@@ -50,12 +50,12 @@ O projeto em questão utiliza como base de dados o arquivo json disponibilizado 
 ### Page 1
 Web -> tela de resultados:
 
-<img align="center" src="./telas/results.png"></img>
+<img align="center" src="./img/results.png"></img>
 
 ### Page 2
 Web -> tela de listagem de clientes:
 
-<img align="center" src="./telas/clients.png"></img>
+<img align="center" src="./img/clients.png"></img>
 
 ## Licença
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-//import Nav from './components/Nav/index';
 import Routes from './Routes/routes';
 import { Provider } from 'react-redux';
 import store from './store/index';

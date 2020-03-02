@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './styles.css';
-
 import FilterNav from '../../components/Result/FilterNav';
 import ContentValueTotal from '../../components/Result/ContentValueTotal';
 import GraphicCircle from '../../components/Result/GraphicCircle/index';
