@@ -27,10 +27,6 @@ class Result extends Component {
     await this.setState({transactions:dados});
   }
 
-   todos () {
-    
-  }
-
   total = (transactions) => {
     return (this.totalPorTipo(transactions,"Banho & Tosa")
     +this.totalPorTipo(transactions,"Consultas")
@@ -66,6 +62,21 @@ class Result extends Component {
     }
     return total;
   }
+
+  totalLiquido = (data) => {
+    let receitas=0;
+    let despesas=0;
+    for (var d in data) {
+      if(data[d].type === 'Receitas'){
+        receitas += data[d].amount;
+      }
+      if(data[d].type === 'Despesas'){
+        despesas += data[d].amount;
+      }
+    }
+    return(receitas-despesas)
+  }
+
 
   findMes(date){
     const dateSplit=date.split(' ');
@@ -207,20 +218,6 @@ class Result extends Component {
   filterOutros(){
     this.componentDidMount();
     this.setState({classNameGroup:'outros'});
-  }
-
-  totalLiquido = (data) => {
-    let receitas=0;
-    let despesas=0;
-    for (var d in data) {
-      if(data[d].type === 'Receitas'){
-        receitas += data[d].amount;
-      }
-      if(data[d].type === 'Despesas'){
-        despesas += data[d].amount;
-      }
-    }
-    return(receitas-despesas)
   }
   
   render() {
