@@ -11,7 +11,6 @@ class NavMainRouter extends Component{
   state = {
     rota: "home"
   };
-
   componentDidMount(){
     const unlisten = history.listen((location, action) => {
       //console.log(action, location.pathname, location.state);
